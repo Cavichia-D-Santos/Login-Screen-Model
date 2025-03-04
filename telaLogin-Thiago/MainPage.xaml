@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="telaLogin_Thiago.MainPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style
+                x:Name="styBordas"
+                x:Key="styBordas"
+                TargetType="Border">
+                <Setter Property="Stroke" Value="Black"/>
+                <Setter Property="StrokeThickness" Value="2"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout
+            Padding="30"
+            Spacing="20"
+            BackgroundColor="White">
+        <Image
+                Source="logothiago.png"
+                HeightRequest="180"
+                Aspect="AspectFit"
+                SemanticProperties.Description="Desenho de um gato preto em um fundo amarelo"/>
+
+        <Label
+                x:Name="lblLogin"
+                Text="Ra, Email ou Cpf"
+                TextColor="black"/>
+        <Grid ColumnSpacing="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.8*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Border Style="{StaticResource styBordas}"
+            Grid.Column="0">
+                <Entry x:Name="etrLogin"
+                       TextColor="black"/>
+            </Border>
+            <Border Style="{StaticResource styBordas}"
+            Grid.Column="1">
+                <Button
+            x:Name="btnLoginLimpar"
+            Text="Limpar"
+            TextColor="black"
+            BackgroundColor="LightGray"
+            CornerRadius="0"/>
+            </Border>
+        </Grid>
+
+        <Label
+                x:Name="lblSenha"
+                Text="Senha"
+                TextColor="black"/>
+        <Grid ColumnSpacing="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.8*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Border Style="{StaticResource styBordas}"
+                    Grid.Column="0">
+                <Entry
+                    x:Name="etrSenha"
+                    TextColor="black"
+                    IsPassword="True"/>
+            </Border>
+            <Border Style="{StaticResource styBordas}"
+                    Grid.Column="1">
+                <Button
+                    x:Name="btnSenhaLimpar"
+                    Text="Limpar"
+                    TextColor="black"
+                    BackgroundColor="LightGray"
+                    CornerRadius="0"/>
+            </Border>
+        </Grid>
+
+        <Border Style="{StaticResource styBordas}">
+            <Button
+                x:Name="btnAcessar"
+                Text="Acessar"
+                TextColor="black"
+                BackgroundColor="LightGray"
+                CornerRadius="0"/>
+        </Border>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Label
+                x:Name="lblCadastrar"
+                Text="Não possui conta? Cadastre-se aqui."
+                TextColor="black"
+                HorizontalTextAlignment="Center"
+                Grid.Row="0"/>
+            <Label
+                x:Name="lblResetSenha"
+                Text="Esqueceu a senha? Clique aqui."
+                TextColor="black"
+                HorizontalTextAlignment="Center"
+                Grid.Row="1"/>
+        </Grid>
+
+    </VerticalStackLayout>
+
+</ContentPage>
